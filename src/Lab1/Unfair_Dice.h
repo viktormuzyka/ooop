@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <cassert>
 #include <vector>
@@ -10,20 +11,23 @@
 class Unfair_dice
 {
 public:
-	
+	Unfair_dice() {
+		number_of_sides = 0;
+		probability_for_side = new double[0];
+	}
 	Unfair_dice(int number_of_sides, double* probability_for_side) {
-		assert(number_of_sides, "Negative number of sides");
+		static_assert(number_of_sides, "Negative number of sides");
 		this->number_of_sides = number_of_sides;
 
 		this->probability_for_side = new double[number_of_sides];
 		double sum_for_checking = 0;//check probabilities input(sum have to be equal to 1)
 		for (int i = 0; i < number_of_sides; i++)
 		{
-			assert(probability_for_side[i]>=0, "Negative probability");
+			static_assert(probability_for_side[i] >= 0, "Negative probability");
 			this->probability_for_side[i] = probability_for_side[i];
 			sum_for_checking += probability_for_side[i];
 		}
-		assert(abs(sum_for_checking - 1) < 0.0001, "Sum of probability doesn't be equal to 1");
+		static_assert(abs(sum_for_checking - 1) < 0.0001, "Sum of probability doesn't be equal to 1");
 	};
 
 	Unfair_dice(const Unfair_dice& other) {
@@ -34,7 +38,7 @@ public:
 			this->probability_for_side[i] = other.probability_for_side[i];
 		}
 	}
-	
+
 	Unfair_dice operator = (const Unfair_dice& other) {
 		this->number_of_sides = other.number_of_sides;
 		this->probability_for_side = new double[other.number_of_sides];
@@ -42,7 +46,18 @@ public:
 		{
 			this->probability_for_side[i] = other.probability_for_side[i];
 		}
+		return *this;
 	}
+	Unfair_dice ( Unfair_dice& other) {
+		this->number_of_sides = other.number_of_sides;
+		this->probability_for_side = new double[other.number_of_sides];
+		for (int i = 0; i < this->number_of_sides; i++)
+		{
+			this->probability_for_side[i] = other.probability_for_side[i];
+		}
+		
+	}
+
 
 	~Unfair_dice() {
 		delete[] probability_for_side;
@@ -74,10 +89,10 @@ Unfair_dice make_random_dice() {
 	double sum = 0;
 	for (int i = 0; i < n; i++)
 	{
-		probabilities[i] = (rand() % 1001) ;
+		probabilities[i] = (rand() % 1001);
 		sum += probabilities[i];
 	}
-	if (sum==0)
+	if (sum == 0)
 	{
 		probabilities[0] = 1;
 		sum = 1;
@@ -118,20 +133,19 @@ void find_all_combination_sum_recursion(std::map<int, double>& result, std::vect
 		}
 	}
 }
-std::map <int, double> find_all_combination_sum(std::vector <Unfair_dice> &dices, bool print=0) {
+std::map <int, double> find_all_combination_sum(std::vector <Unfair_dice>& dices, bool print = 0) {
 	std::map <int, double> result;
 	find_all_combination_sum_recursion(result, dices);
 	if (print)
 	{
 		std::map <int, double> ::iterator it = result.begin();
-		for (int i = 0; it != result.end(); it++, i++) {  // auaiaei eo
+		for (int i = 0; it != result.end(); it++, i++) {  // выводим их
 			std::cout << i << ") sum " << it->first << ", probability " << it->second << std::endl;
 		}
 	}
 	return result;
 }
-
-void compare_compare_two_sets_of_dices(std::vector <Unfair_dice>& dices_1, std::vector <Unfair_dice>& dices_2) {
+void compare_two_sets_of_dices(std::vector <Unfair_dice>& dices_1, std::vector <Unfair_dice>& dices_2) {
 	std::map<int, double> sums_1 = find_all_combination_sum(dices_1);
 	std::map<int, double> sums_2 = find_all_combination_sum(dices_2);
 	std::map<int, double>::iterator iter_1 = sums_1.begin(), iter_2 = sums_2.begin();
@@ -143,7 +157,7 @@ void compare_compare_two_sets_of_dices(std::vector <Unfair_dice>& dices_1, std::
 			iter_2++;
 			continue;
 		}
-		if (iter_2 == sums_2.end() )
+		if (iter_2 == sums_2.end())
 		{
 			std::cout << "sum = " << iter_1->first << " has higer on " << iter_1->second << " probability in first set" << std::endl;
 			iter_1++;
@@ -161,17 +175,17 @@ void compare_compare_two_sets_of_dices(std::vector <Unfair_dice>& dices_1, std::
 			iter_1++;
 			continue;
 		}
-		if (iter_1->first==iter_2->first)
+		if (iter_1->first == iter_2->first)
 		{
-			if (iter_1->second==iter_2->second)
+			if (iter_1->second == iter_2->second)
 			{
-				std::cout << "sum = " << iter_1->first << " has same probability in two sets"<<std::endl;
+				std::cout << "sum = " << iter_1->first << " has same probability in two sets" << std::endl;
 			}
 			else {
 				std::cout << "sum = " << iter_1->first << " has higer on " << abs(iter_1->second - iter_2->second) << " probability in ";
 				if (iter_1->second > iter_2->second)
 				{
-					std::cout << "first set"<<std::endl;
+					std::cout << "first set" << std::endl;
 				}
 				else {
 					std::cout << "second set" << std::endl;
@@ -181,28 +195,4 @@ void compare_compare_two_sets_of_dices(std::vector <Unfair_dice>& dices_1, std::
 			iter_2++;
 		}
 	}
-}
-
-
-int main()
-{
-	srand(time(NULL));
-	Unfair_dice a = make_random_dice();
-	Unfair_dice b = make_random_dice();
-	Unfair_dice c = make_random_dice();
-	Unfair_dice d = make_random_dice();
-
-	a.print();
-	b.print();
-	c.print();
-	d.print();
-
-	std::vector<Unfair_dice> array_1 = { a,b };
-	std::vector<Unfair_dice> array_2 = { c,d };
-	find_all_combination_sum(array_1, 1);
-	std::cout << std::endl;
-	find_all_combination_sum(array_2, 1);
-	std::cout << std::endl;
-	compare_compare_two_sets_of_dices(array_1, array_2);
-
 }
