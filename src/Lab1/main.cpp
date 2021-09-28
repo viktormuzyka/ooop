@@ -7,7 +7,7 @@
 #include <stdlib.h>   
 #include <time.h>
 #include "Sparse_structure.h"
-#include "Unhair_Dice.h"
+#include "Unfair_Dice.h"
 
 int main()
 {
