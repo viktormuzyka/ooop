@@ -36,7 +36,7 @@ public:
 		}
 	}
 	void add(T data, int index) {
-		assert(((index < this->n) && index>=0), "Incorrect element's index");
+		static_assert(((index < this->n) && index>=0), "Incorrect element's index");
 		Node<T>* current = this->root;
 		if (!this->root)
 		{
@@ -68,7 +68,7 @@ public:
 		}
 	}
 	T operator[](int index) {
-		assert(((index < this->n) && index >= 0), "Incorrect element's index");
+		static_assert(((index < this->n) && index >= 0), "Incorrect element's index");
 		Node<T>*current = this->root;
 		while (current) {
 			if (current->pos==index)
@@ -183,7 +183,7 @@ public:
 		return *this;
 	}
 	void add_to_matrix(T data, int i, int j) {
-		assert((i < m & j < n & i >= 0 & j >= 0), "Position is incorrect");
+		static_assert((i < m & j < n & i >= 0 & j >= 0), "Position is incorrect");
 		int index = i * this->n + j;
 		Node<T>* current = this->root;
 		if (!this->root)
@@ -217,7 +217,7 @@ public:
 	}
 	T get(int i, int j) {
 		int index = i * this->n + j;
-		assert(((index < this->n* this->m) && index >= 0), "Incorrect element's index");
+		static_assert(((index < this->n* this->m) && index >= 0), "Incorrect element's index");
 		Node<T>* current = this->root;
 		while (current) {
 			if (current->pos == index)

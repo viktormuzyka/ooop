@@ -82,7 +82,6 @@ private:
 };
 
 Unfair_dice make_random_dice() {
-
 	int possible_numbers[] = { 2,4,6,8,10,12,20 };
 	int n = possible_numbers[rand() % 7];
 	double* probabilities = new double[n];
