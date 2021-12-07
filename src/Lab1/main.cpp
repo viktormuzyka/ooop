@@ -6,15 +6,15 @@
 #include <stdio.h>   
 #include <stdlib.h>   
 #include <time.h>
-#include "Sparse_structure.h"
-#include "Unfair_Dice.h"
+#include "Sparse_list.h"
+#include "dice_class.h"
 
 int main()
 {
-	Sparse_list<int> list(10);
-	list.add(1, 0);
-	list.add(3, 1);
-	list.add(5, 2);
+	/*Sparse_list<int> list(18);
+	list.add(11, 0);
+	list.add(13);
+	list.add(15, 2);
 	list.add(23, 3);
 	list.add(11, 4);
 	list.print();
@@ -37,5 +37,5 @@ int main()
 	
 	std::cout << "SUM " << std::endl;
 	find_all_combination_sum(first_set, 1);
-	find_all_combination_sum(second_set, 1);	
+	find_all_combination_sum(second_set, 1);*/	
 }

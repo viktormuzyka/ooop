@@ -36,7 +36,7 @@ public:
 		}
 	}
 	void add(T data, int index) {
-		static_assert(((index < this->n) && index>=0), "Incorrect element's index");
+		static_assert(((index < this->n) && index>=0), "Incorrect index");
 		Node<T>* current = this->root;
 		if (!this->root)
 		{
@@ -68,7 +68,7 @@ public:
 		}
 	}
 	T operator[](int index) {
-		static_assert(((index < this->n) && index >= 0), "Incorrect element's index");
+		static_assert(((index < this->n) && index >= 0), "Incorrect index");
 		Node<T>*current = this->root;
 		while (current) {
 			if (current->pos==index)
