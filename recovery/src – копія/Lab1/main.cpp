@@ -6,15 +6,15 @@
 #include <stdio.h>   
 #include <stdlib.h>   
 #include <time.h>
-#include "Sparse_list.h"
-#include "dice_class.h"
+#include "Sparse_structure.h"
+#include "Unfair_Dice.h"
 
 int main()
 {
-	/*Sparse_list<int> list(18);
-	list.add(11, 0);
-	list.add(13);
-	list.add(15, 2);
+	Sparse_list<int> list(10);
+	list.add(1, 0);
+	list.add(3, 1);
+	list.add(5, 2);
 	list.add(23, 3);
 	list.add(11, 4);
 	list.print();
@@ -22,10 +22,10 @@ int main()
 	
 	
 	srand(time(NULL));
-	Unfair_dice a = make_random();
-	Unfair_dice b = make_random();
-	Unfair_dice c = make_random();
-	Unfair_dice d = make_random();
+	Unfair_dice a = make_random_dice();
+	Unfair_dice b = make_random_dice();
+	Unfair_dice c = make_random_dice();
+	Unfair_dice d = make_random_dice();
 
 	a.print();
 	b.print();
@@ -37,5 +37,5 @@ int main()
 	
 	std::cout << "SUM " << std::endl;
 	find_all_combination_sum(first_set, 1);
-	find_all_combination_sum(second_set, 1);*/	
+	find_all_combination_sum(second_set, 1);	
 }

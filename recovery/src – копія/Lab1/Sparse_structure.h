@@ -36,7 +36,7 @@ public:
 		}
 	}
 	void add(T data, int index) {
-		static_assert(((index < this->n) && index>=0), "Incorrect index");
+		static_assert(((index < this->n) && index>=0), "Incorrect element's index");
 		Node<T>* current = this->root;
 		if (!this->root)
 		{
@@ -68,7 +68,7 @@ public:
 		}
 	}
 	T operator[](int index) {
-		static_assert(((index < this->n) && index >= 0), "Incorrect index");
+		static_assert(((index < this->n) && index >= 0), "Incorrect element's index");
 		Node<T>*current = this->root;
 		while (current) {
 			if (current->pos==index)
@@ -255,7 +255,9 @@ public:
 	}
 
 	Sparse_matrix operator+ (Sparse_matrix& added) {//this + added
-		Node<T>* current = nullptr;
+		Sparse_matrix<T> sum(this->m, this->n);
+		//fast method
+		/*Node<T>* current = nullptr;
 		Node<T>* current_A = this->root;
 		Node<T>* current_B = added.root;
 		if (this->m == added.m && this->n == added.n)
@@ -335,7 +337,23 @@ public:
 		}
 		else {
 			return sum;
+		}*/
+
+		//short code
+		for (int i = 0; i < this->m; i++)
+		{
+			for (int j = 0; j < this->n; j++)
+			{
+				T a = this->get(i, j);
+				T b = added.get(i, j);
+				if ((a + b) != 0)
+				{
+					sum.add_to_matrix(a + b, i, j);
+				}
+			}
 		}
+		return sum;
+	}
 	Sparse_matrix operator* (Sparse_matrix& multiplier) {//this + added
 		Sparse_matrix<T> result(this->m, this->n);
 		int a = 0;
