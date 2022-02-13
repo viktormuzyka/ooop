@@ -1,0 +1,24 @@
+﻿  lab_1(tests).cpp
+D:\ooop\src\sem2\lab_1(uml)\dice.h(21,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\dice.h(28,4): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\dice.h(32,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(36,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(68,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(188,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(222,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+D:\ooop\src\sem2\lab_1(tests)\lab_1(tests).cpp(69,1): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+D:\ooop\src\sem2\lab_1(tests)\lab_1(tests).cpp(70,1): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(188,1): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+D:\ooop\src\sem2\lab_1(uml)\sparce_list.h(187): message : while compiling class template member function 'void Sparse_matrix<int>::add_to_matrix(T,int,int)'
+          with
+          [
+              T=int
+          ]
+D:\ooop\src\sem2\lab_1(tests)\lab_1(tests).cpp(46): message : see reference to function template instantiation 'void Sparse_matrix<int>::add_to_matrix(T,int,int)' being compiled
+          with
+          [
+              T=int
+          ]
+D:\ooop\src\sem2\lab_1(tests)\lab_1(tests).cpp(37): message : see reference to class template instantiation 'Sparse_matrix<int>' being compiled
+     Creating library D:\ooop\src\sem2\lab_1(uml)\Debug\lab_1(tests).lib and object D:\ooop\src\sem2\lab_1(uml)\Debug\lab_1(tests).exp
+  lab_1(tests).vcxproj -> D:\ooop\src\sem2\lab_1(uml)\Debug\lab_1(tests).dll
