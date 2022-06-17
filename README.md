@@ -8,5 +8,4 @@
 >### **Lab_1**: *Lab_1 from sem1, add: unit test, uml diagrams, documentation, some functions:*
 >>#### [code and documentation](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1(uml))
 >>#### [unit tests](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1(tests))
->### **Lab_2 - project, visualization sorting on qt**
-https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab2(with%20test)
+>### [**Lab_2 - project, visualization sorting on qt**](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab2(with%20test))
