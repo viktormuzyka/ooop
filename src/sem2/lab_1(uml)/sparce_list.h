@@ -314,7 +314,7 @@ public:
 		return this->root;
 	}
 private:
-	int m;
-	int n;
+	int m; //columns
+	int n; //lines
 	Node<T>* root;
 };

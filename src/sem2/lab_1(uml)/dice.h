@@ -8,8 +8,6 @@
 #include <stdlib.h>   
 #include <time.h>
 
-double const e = 0.0001;
-
 class Unfair_dice
 {
 public:
@@ -18,6 +16,8 @@ public:
 		probability_for_side = new double[0];
 	}
 	Unfair_dice(int number_of_sides, double* probability_for_side) {
+		double const e = 0.0001;
+
 		assert(number_of_sides, "Negative number of sides");
 		this->number_of_sides = number_of_sides;
 
