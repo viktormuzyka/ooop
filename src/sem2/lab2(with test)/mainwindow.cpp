@@ -145,3 +145,11 @@ void MainWindow::on_ClearButton_clicked()
     this->ui->groupBox->setEnabled(true);
     ui->SortButton->setEnabled(false);
 }
+
+void MainWindow::on_delay_valueChanged(int value)
+{
+    const QString& s = "Delay: "+QString::number(value)+"ms";
+
+    ui->label->setText(s);
+}
+

@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-
+//#include <QSound>
 #include <QApplication>
 
 #include <vector>
@@ -134,6 +134,8 @@ int main(int argc, char *argv[])
 {
     doctest::Context context;
     int res = context.run();
+
+    //QSound::play(QUrl("qrc:/sound/1.mp3"));
 
     QApplication a(argc, argv);
     MainWindow* w = MainWindow::Create();

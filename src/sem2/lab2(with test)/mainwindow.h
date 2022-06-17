@@ -42,6 +42,8 @@ private slots:
 
     void on_ClearButton_clicked();
 
+    void on_delay_valueChanged(int value);
+
 private:
     void FormNumbers();
 

@@ -28,11 +28,18 @@ font: 12pt &quot;Times New Roman&quot;;
     <item row="20" column="5">
      <widget class="QLineEdit" name="writes"/>
     </item>
-    <item row="16" column="1">
-     <widget class="QComboBox" name="SortingNameComboBox">
+    <item row="20" column="2">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Comparisons</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QSlider" name="delay">
       <property name="minimumSize">
        <size>
-        <width>300</width>
+        <width>30</width>
         <height>0</height>
        </size>
       </property>
@@ -42,81 +49,39 @@ font: 12pt &quot;Times New Roman&quot;;
         <height>16777215</height>
        </size>
       </property>
-      <item>
-       <property name="text">
-        <string>BubbleSort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>InsertionSort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>SelectionSort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>QuickSortPivotMiddle</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>MergeSort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>CountingSort</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>RadixSort</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="20" column="3">
-     <widget class="QLineEdit" name="comparisons"/>
-    </item>
-    <item row="6" column="1">
-     <widget class="QSpinBox" name="numberOfItems">
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
       <property name="styleSheet">
-       <string notr="true">background: rgb(255, 255, 255)</string>
+       <string notr="true"/>
       </property>
       <property name="minimum">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="maximum">
-       <number>10000000</number>
+       <number>1000</number>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
+      <property name="pageStep">
+       <number>10</number>
       </property>
       <property name="value">
+       <number>500</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="tickPosition">
+       <enum>QSlider::TicksBelow</enum>
+      </property>
+      <property name="tickInterval">
        <number>100</number>
       </property>
      </widget>
     </item>
-    <item row="4" column="1">
-     <widget class="QLabel" name="label_3">
-      <property name="maximumSize">
-       <size>
-        <width>130</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 255);</string>
-      </property>
+    <item row="10" column="1">
+     <widget class="QLabel" name="label_6">
       <property name="text">
-       <string>Size of array</string>
+       <string>Sorting order</string>
       </property>
      </widget>
     </item>
@@ -127,57 +92,24 @@ font: 12pt &quot;Times New Roman&quot;;
       </property>
      </widget>
     </item>
-    <item row="20" column="1">
-     <widget class="QLabel" name="SortingTime">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="20" column="2">
-     <widget class="QLabel" name="label_2">
-      <property name="text">
-       <string>Comparisons</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLabel" name="WorstCase">
-      <property name="text">
-       <string/>
-      </property>
+    <item row="11" column="1">
+     <widget class="QComboBox" name="SortingOrder">
+      <item>
+       <property name="text">
+        <string>Increasing</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Decreasing</string>
+       </property>
+      </item>
      </widget>
     </item>
     <item row="1" column="1">
      <widget class="QLabel" name="BestCase">
       <property name="text">
        <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="1">
-     <widget class="QComboBox" name="InitiateOrder">
-      <item>
-       <property name="text">
-        <string>Random</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Almost Sorted</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Almost Sorted in Reverse Order</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="20" column="4">
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Writes</string>
       </property>
      </widget>
     </item>
@@ -188,6 +120,13 @@ font: 12pt &quot;Times New Roman&quot;;
       </property>
      </widget>
     </item>
+    <item row="20" column="4">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Writes</string>
+      </property>
+     </widget>
+    </item>
     <item row="20" column="7">
      <widget class="QLineEdit" name="reads">
       <property name="text">
@@ -195,10 +134,17 @@ font: 12pt &quot;Times New Roman&quot;;
       </property>
      </widget>
     </item>
-    <item row="10" column="1">
-     <widget class="QLabel" name="label_6">
+    <item row="0" column="2" rowspan="20" colspan="7">
+     <widget class="QGraphicsView" name="graphicsView">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(7, 0, 0);</string>
+      </property>
+     </widget>
+    </item>
+    <item row="20" column="1">
+     <widget class="QLabel" name="SortingTime">
       <property name="text">
-       <string>Sorting order</string>
+       <string/>
       </property>
      </widget>
     </item>
@@ -253,6 +199,58 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(149,45,253,0.38728
       </layout>
      </widget>
     </item>
+    <item row="12" column="1">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Initiate order</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="WorstCase">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="label_3">
+      <property name="maximumSize">
+       <size>
+        <width>130</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Size of array</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QSpinBox" name="numberOfItems">
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: rgb(255, 255, 255)</string>
+      </property>
+      <property name="minimum">
+       <number>2</number>
+      </property>
+      <property name="maximum">
+       <number>10000000</number>
+      </property>
+      <property name="value">
+       <number>100</number>
+      </property>
+     </widget>
+    </item>
     <item row="8" column="1">
      <widget class="QLabel" name="label">
       <property name="maximumSize">
@@ -265,9 +263,82 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(149,45,253,0.38728
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Delay</string>
+       <string>Delay: 500ms</string>
       </property>
      </widget>
+    </item>
+    <item row="16" column="1">
+     <widget class="QComboBox" name="SortingNameComboBox">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <item>
+       <property name="text">
+        <string>BubbleSort</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>InsertionSort</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SelectionSort</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>QuickSortPivotMiddle</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>MergeSort</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CountingSort</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RadixSort</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="13" column="1">
+     <widget class="QComboBox" name="InitiateOrder">
+      <item>
+       <property name="text">
+        <string>Random</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Almost Sorted</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Almost Sorted in Reverse Order</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="20" column="3">
+     <widget class="QLineEdit" name="comparisons"/>
     </item>
     <item row="18" column="1" rowspan="2">
      <widget class="QGroupBox" name="VisualizationControl">
@@ -296,77 +367,6 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(149,45,253,0.38728
      <widget class="QLabel" name="label_5">
       <property name="text">
        <string>Reads</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QSlider" name="delay">
-      <property name="minimumSize">
-       <size>
-        <width>30</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>16777215</width>
-        <height>16777215</height>
-       </size>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="minimum">
-       <number>1</number>
-      </property>
-      <property name="maximum">
-       <number>1000</number>
-      </property>
-      <property name="singleStep">
-       <number>10</number>
-      </property>
-      <property name="pageStep">
-       <number>10</number>
-      </property>
-      <property name="value">
-       <number>500</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="tickPosition">
-       <enum>QSlider::TicksBelow</enum>
-      </property>
-      <property name="tickInterval">
-       <number>100</number>
-      </property>
-     </widget>
-    </item>
-    <item row="11" column="1">
-     <widget class="QComboBox" name="SortingOrder">
-      <item>
-       <property name="text">
-        <string>Increasing</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Decreasing</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="12" column="1">
-     <widget class="QLabel" name="label_7">
-      <property name="text">
-       <string>Initiate order</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="2" rowspan="20" colspan="7">
-     <widget class="QGraphicsView" name="graphicsView">
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(7, 0, 0);</string>
       </property>
      </widget>
     </item>
