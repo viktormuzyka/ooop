@@ -6,7 +6,7 @@
 >### [**Project**](https://github.com/BubbleGuys/projectX/tree/main)
 ##  sem2
 >### **Lab_1**: *Lab_1 from sem1, add: unit test, uml diagrams, documentation, some functions:*
->>#### [code](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1
+>>#### [code](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1)
 >>#### [documentation](https://viktormuzyka.github.io/lab1_docs/)
 >>#### [unit tests](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1(tests))
 >### [**Lab_2 - project, visualization sorting on qt**](https://github.com/VisualizationSorting/SortingVisualization)
