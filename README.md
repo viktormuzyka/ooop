@@ -5,7 +5,7 @@
 >### [**Lab_3**: *Graphic lib sfml*](https://github.com/viktormuzyka/ooop/tree/main/src/sem1/Lab3)
 >### [**Project**](https://github.com/BubbleGuys/projectX/tree/main)
 ##  sem2
->### **Lab_1**: [Lab_1 from sem1, add: unit test, uml diagrams, documentation, some functions:]https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1)
+>### **Lab_1**: Lab_1 from sem1, add: unit test, uml diagrams, documentation, some new functions:
 >>#### [code](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1)
 >>#### [documentation](https://viktormuzyka.github.io/lab1_docs/)
 >>#### [unit tests](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1(tests))
