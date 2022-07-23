@@ -11,4 +11,5 @@
 >>#### [unit tests](https://github.com/viktormuzyka/ooop/tree/main/src/sem2/lab_1(tests))
 >### [**Lab_2 - project, visualization sorting on qt**](https://github.com/VisualizationSorting/SortingVisualization)
 >### [**Courses**](https://github.com/viktormuzyka/ooop/tree/main/src/Courses)
+>#OoOp
 
